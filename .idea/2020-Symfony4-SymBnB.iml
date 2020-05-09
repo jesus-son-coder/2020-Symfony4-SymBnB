@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/src" isTestSource="false" packagePrefix="App" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/nikic/php-parser/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/event-manager/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/migrations/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/annotations/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/reflection/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/dbal/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/var/cache/dev" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/ocramius/package-versions/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/sensio/framework-extra-bundle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/collections/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/ocramius/proxy-manager/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/instantiator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/egulias/email-validator" isTestSource="false" packagePrefix="Egulias" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/twig/twig/src" isTestSource="false" packagePrefix="Twig" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/psr/log" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/symfony/framework-bundle/Tests/Fixtures" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/orm/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/persistence/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/lexer/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/cache/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/common/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/doctrine/inflector/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020-symbnb/vendor/monolog/monolog/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
