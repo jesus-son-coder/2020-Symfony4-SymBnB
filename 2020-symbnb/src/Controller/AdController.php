@@ -5,8 +5,10 @@ namespace App\Controller;
 use App\Entity\Ad;
 use App\Form\AdType;
 use App\Repository\AdRepository;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,11 +34,27 @@ class AdController extends AbstractController
 
   /**
    * @Route("/ads/new", name="ad_create")
+   * @param Request $request
+   * @param ObjectManager $manager
+   * @return Response
    */
-  public function create()
+  public function create(Request $request, ObjectManager $manager)
   {
     $ad = new Ad();
     $form = $this->createForm(AdType::class, $ad);
+
+    $form->handleRequest($request);
+
+    if($form->isSubmitted() && $form->isValid()) {
+      //$manager =$this->getDoctrine()->getManager();
+      // Sauvegarder en base de données :
+      $manager->persist($ad);
+      $manager->flush();
+
+      return $this->redirectToRoute('ads_show', [
+        'slug' => $ad->getSlug()
+      ]);
+    }
 
     return $this->render('ad/new.html.twig', [
       'form' => $form->createView()
