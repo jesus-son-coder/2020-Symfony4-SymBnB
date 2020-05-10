@@ -5,16 +5,14 @@
 {% block body %}
     <div class="container">
         <h1>Créer une nouvelle annonce</h1>
-{#
-        Méthode #1
-        ----------
+
         {{ form_start(form) }}
-        {{ form_widget(form) }}
+
+        {# {{ form_widget(form.title) }} #}
+        {{ form_row(form.title) }}
+
         <button type="submit" class="btn btn-primary">Créer la nouvelle annonce</button>
         {{ form_end(form) }}
-#}
-{#      Méthode #2
-        ----------
-#}      {{ form(form) }}
+
     </div>
 {% endblock %}

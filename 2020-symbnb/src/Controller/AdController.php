@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Ad;
+use App\Form\AdType;
 use App\Repository\AdRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -35,21 +36,7 @@ class AdController extends AbstractController
   public function create()
   {
     $ad = new Ad();
-    $form = $this->createFormBuilder($ad)
-      ->add('title')
-      ->add('introduction')
-      ->add('content')
-      ->add('rooms')
-      ->add('price')
-      ->add('coverImage')
-      ->add('save', SubmitType::class, [
-        'label' => 'Créer la nouvelle annonce',
-        'attr' => [
-          'class' => 'btn btn-primary'
-        ]
-      ])
-      ->getForm()
-    ;
+    $form = $this->createForm(AdType::class, $ad);
 
     return $this->render('ad/new.html.twig', [
       'form' => $form->createView()
