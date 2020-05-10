@@ -19,18 +19,6 @@ class HomeController extends Controller
    */
   public function home()
   {
-    /*
-    return new Response("
-        <html>
-        <head>
-            <title>Mon application</title>
-        </head>
-        <body>
-            <h1>Bonjour à tous !</h1>
-            <p>C'est ma première page Symfony</p>
-        </body>
-        </html>");
-    */
     return $this->render(
       'home.html.twig'
     );
