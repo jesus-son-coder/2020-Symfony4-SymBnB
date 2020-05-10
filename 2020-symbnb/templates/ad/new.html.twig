@@ -3,7 +3,7 @@
 {% block title %}Création d'une annonce{% endblock %}
 
 {# 1) Lorsque le Thème est inclus dans le même fichier que le formulaire : #}
-{% form_theme form _self %}
+{# {% form_theme form _self %} #}
 
 {# ou : #}
 {# 2) Lorsque le thème est présent dans un fichier externalisé : #}
@@ -12,7 +12,7 @@
 {% block body %}
     <div class="container">
         <h1>Créer une nouvelle annonce</h1>
-        {# Ici, l'objet "form" représente le Formulaire en lui-même : #}
+
         {{ form_start(form) }}
 
         {{ form_widget(form) }}
@@ -22,35 +22,3 @@
 
     </div>
 {% endblock %}
-
-{# Le Thème personnalisé présent dans le fichier: #}
-{% block form_row %}
-    {# {{ dump(form) }} #}
-    <div class="form-group">
-        {{ form_label(form) }}
-        {{ form_widget(form) }}
-    </div>
-    {# L'objet 'form' qui est au sein de ce bloc "form_row" (ci-dessus) est différent de l'objet 'form' utilisé plus haut dans 'form_start' et 'form_widget'.
-    Ici, l'objet 'form' représente un champ du formulaire...
-    ...alors que plus haut, l'objet "form" représente le formulaire en entier.
-    #}
-{% endblock %}
-
-
-{% block text_widget %}
-{# Quand Twig doit afficher un champ de type "text", qu'est ce qu'iol doit faire ?
-    C'est ici qu'on peut le personnaliser : #}
-    <input type="text" name="{{ full_name }}" id="{{ id }}" class="form-control" />
-{% endblock %}
-
-{% block url_widget %}
-    {# Personnaliser les champs de type "url"  #}
-    <input type="url" name="{{ full_name }}" id="{{ id }}" class="form-control" />
-{% endblock %}
-
-{% block textarea_widget %}
-    {# Personnaliser les champs de type "text_area"  #}
-    <textarea name="{{ full_name }}" id="{{ id }}" cols="30" rows="10" class="form-control" ></textarea>
-{% endblock %}
-
-{# etc... #}
