@@ -3,7 +3,40 @@
 {% block title %}{{ ad.title }}{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>{{ ad.title }}</h1>
-</div>
+    <div class="ad-title" style="background-image: url({{ ad.coverImage }})">
+        <div class="container">
+            <h1>{{ ad.title }}</h1>
+            <p>{{ ad.introduction }}</p>
+            <p class="h2">
+                <strong>{{ ad.rooms }} chambres</strong> pour <strong>{{ ad.price }}&euro;</strong> par nuit
+            </p>
+            <a href="#" class="btn btn-primary">Réserver !</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mb-3">
+                {{ ad.content | raw }}
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="http://placehold.it/64x64" alt="Avatar de Joseph">
+                    </div>
+                    <div class="col">
+                        <h3>Joseph Dupont</h3>
+                        <span class="badge badge-primary">3 annonces</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dolorem, inventore minus
+                    perspiciatis repudiandae velit veritatis! Accusantium eius fuga incidunt.</p>
+                <p>Accusantium aut, consequatur consequuntur cumque dignissimos dolorem facilis in inventore ipsa iste
+                    libero reiciendis repudiandae voluptate. Commodi cupiditate maiores quibusdam.</p>
+                <p>Ab architecto aspernatur aut corporis delectus doloremque earum, facilis neque nulla pariatur quam
+                    similique sit tenetur ut vitae! Quaerat, voluptatibus!</p>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
