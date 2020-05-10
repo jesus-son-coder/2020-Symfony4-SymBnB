@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AdRepository;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Self_;
 
 /**
  * @ORM\Entity(repositoryClass=AdRepository::class)
@@ -78,12 +79,11 @@ class Ad
     return $this->slug;
   }
 
-  /**
-   * @param mixed $slug
-   */
-  public function setSlug($slug): void
+
+  public function setSlug($slug): self
   {
     $this->slug = $slug;
+    return $this;
   }
 
   /**
@@ -94,12 +94,11 @@ class Ad
     return $this->price;
   }
 
-  /**
-   * @param mixed $price
-   */
-  public function setPrice($price): void
+
+  public function setPrice($price): self
   {
     $this->price = $price;
+    return $this;
   }
 
   /**
@@ -110,12 +109,11 @@ class Ad
     return $this->introduction;
   }
 
-  /**
-   * @param mixed $introduction
-   */
-  public function setIntroduction($introduction): void
+
+  public function setIntroduction($introduction): self
   {
     $this->introduction = $introduction;
+    return $this;
   }
 
   /**
@@ -126,12 +124,11 @@ class Ad
     return $this->content;
   }
 
-  /**
-   * @param mixed $content
-   */
-  public function setContent($content): void
+
+  public function setContent($content): self
   {
     $this->content = $content;
+    return $this;
   }
 
   /**
@@ -142,12 +139,11 @@ class Ad
     return $this->coverImage;
   }
 
-  /**
-   * @param mixed $coverImage
-   */
-  public function setCoverImage($coverImage): void
+
+  public function setCoverImage($coverImage): self
   {
     $this->coverImage = $coverImage;
+    return $this;
   }
 
   /**
@@ -158,12 +154,11 @@ class Ad
     return $this->rooms;
   }
 
-  /**
-   * @param mixed $rooms
-   */
-  public function setRooms($rooms): void
+
+  public function setRooms($rooms): self
   {
     $this->rooms = $rooms;
+    return $this;
   }
 
 
