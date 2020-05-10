@@ -26,4 +26,22 @@ class AdController extends AbstractController
       'ads' => $ads,
     ]);
   }
+
+  /**
+   * Permet d'afficher une seule annonce
+   *
+   * @Route("/ads/{slug}", name="ads_show")
+   *
+   * @param $slug
+   * @param AdRepository $repo
+   * @return Response
+   */
+  public function showAction($slug, AdRepository $repo)
+  {
+    $ad = $repo->findOneBySlug($slug);
+
+    return $this->render('ad/show.html.twig', [
+      'ad' => $ad
+    ]);
+  }
 }
