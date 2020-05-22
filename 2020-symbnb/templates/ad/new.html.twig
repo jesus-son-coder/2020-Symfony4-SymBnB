@@ -31,6 +31,8 @@ Dans la formualaire, on a : <div id="ad_images">...   #}
 
     {{ form_widget(form) }}
 
+    <input type="hidden" id="widgets-counter" value="0">
+
     <d class="form-group">
         <button type="button" id="add-image" class="btn btn-primary">Ajouter une image</button>
     </d>
@@ -69,7 +71,8 @@ Dans la formualaire, on a : <div id="ad_images">...   #}
     <script>
         // Ajouter un bloc Image dans le formulaire :
         $('#add-image').click(function() {
-            const index = $('#ad_images div.form-group').length;
+            // const index = $('#ad_images div.form-group').length;
+            const index = +$('#widgets-counter').val();
 
             var container_sous_formulaire = $('#ad_images');
 
@@ -78,6 +81,9 @@ Dans la formualaire, on a : <div id="ad_images">...   #}
 console.log(tmpl);
             // J'injecte ce template au sein de la Div contenant les sous-formulaires :
             $(container_sous_formulaire).append(tmpl);
+
+            $('#widgets-counter').val(index + 1);
+
             handleDeleteButton();
         });
 
