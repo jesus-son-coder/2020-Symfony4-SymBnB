@@ -20,7 +20,7 @@ class AdType extends AbstractType
         $builder
             ->add('title', TextType::class, $this->getConfiguration("Titre", "Saisir le titre...")
             )
-            ->add('slug', TextType::class, $this->getConfiguration("URL de la page de la chambre", "Saisir l'url (automatique)"))
+            ->add('slug', TextType::class, $this->getConfiguration("URL de la page de la chambre", "L'Url est déterminé automatiquement...", ['required' => false]))
           ->add('coverImage', UrlType::class, $this->getConfiguration("URL de l'image", "Donnez l'adresse d'une image qui donne envie..."))
           ->add('introduction', TextType::class, $this->getConfiguration("Introduction", "Donnez une description globale de l'annonce"))
           ->add('content', TextareaType::class, $this->getConfiguration("Description détaillée", "Saisir la description détaillée"))
@@ -38,16 +38,17 @@ class AdType extends AbstractType
    * Permet d'avoir la configuration des options d'un champ
    * @param $label
    * @param $placeholder
+   * @param $options
    * @return array
    */
-    private function getConfiguration($label, $placeholder)
+    private function getConfiguration($label, $placeholder, $options=[])
     {
-      return [
+      return array_merge([
         'label' => $label,
         'attr' => [
           'placeholder' => $placeholder
         ]
-      ];
+      ],$options);
     }
 
     public function configureOptions(OptionsResolver $resolver)
