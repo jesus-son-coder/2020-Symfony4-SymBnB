@@ -2,12 +2,7 @@
 
 {% block title %}Création d'une annonce{% endblock %}
 
-{# 1) Lorsque le Thème est inclus dans le même fichier que le formulaire : #}
 {% form_theme form 'ad/partials/_collection.html.twig' %}
-
-{# ou : #}
-{# 2) Lorsque le thème est présent dans un fichier externalisé : #}
-{# {% form_theme form 'partials/theme.html.twig' %} #}
 
 {% block body %}
     <div class="container">
@@ -26,37 +21,5 @@
 
 
 {% block javascripts %}
-    <script>
-        // Ajouter un bloc Image dans le formulaire :
-        $('#add-image').click(function() {
-            const index = +$('#widgets-counter').val();
-            var container_sous_formulaire = $('#ad_images');
-
-            // Récupérer le prototype des entrées :
-            const tmpl = $(container_sous_formulaire).data('prototype').replace(/__name__/g, index);
-console.log(tmpl);
-            // J'injecte ce template au sein de la Div contenant les sous-formulaires :
-            $(container_sous_formulaire).append(tmpl);
-
-            $('#widgets-counter').val(index + 1);
-
-            handleDeleteButton();
-        });
-
-        // Supprimer un bloc Image dans le formulaire :
-        function handleDeleteButton() {
-            $('button[data-action="delete"]').click(function(){
-                const target = this.dataset.target;
-                $(target).remove();
-            })
-        }
-
-        function updateCounter() {
-            const count = +$('#ad_images div.form-group').length;
-            $('#widgets-counter').val(count);
-        }
-
-        updateCounter();
-        handleDeleteButton();
-    </script>
+    <script src="{{ asset('js/ad.js') }}" ></script>
 {% endblock %}
