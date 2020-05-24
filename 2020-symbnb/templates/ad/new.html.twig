@@ -23,6 +23,7 @@
     </div>
 {% endblock %}
 
+
 {% block _ad_images_widget %}
 {# Le préfixe "_ad_images" provient de l'ID de la zone de l'image dans le formulaire ("ad_images") auquel on rajoute "_" avant le nom et "_widget" à la fin du nom.
 Dans la formualaire, on a : <div id="ad_images">...   #}
@@ -51,9 +52,11 @@ Dans la formualaire, on a : <div id="ad_images">...   #}
                 <div class="row">
                     <div class="col">
                         {{ form_widget(form.url) }}
+                        {{ form_errors(form.url) }}
                     </div>
                     <div class="col">
                         {{ form_widget(form.caption) }}
+                        {{ form_errors(form.caption) }}
                     </div>
                 </div>
             </div>
@@ -71,9 +74,7 @@ Dans la formualaire, on a : <div id="ad_images">...   #}
     <script>
         // Ajouter un bloc Image dans le formulaire :
         $('#add-image').click(function() {
-            // const index = $('#ad_images div.form-group').length;
             const index = +$('#widgets-counter').val();
-
             var container_sous_formulaire = $('#ad_images');
 
             // Récupérer le prototype des entrées :
@@ -95,6 +96,12 @@ console.log(tmpl);
             })
         }
 
+        function updateCounter() {
+            const count = +$('#ad_images div.form-group').length;
+            $('#widgets-counter').val(count);
+        }
+
+        updateCounter();
         handleDeleteButton();
     </script>
 {% endblock %}
